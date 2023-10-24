@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MitMSim.iml" filepath="$PROJECT_DIR$/.idea/modules/MitMSim.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MitMSim-build.iml" filepath="$PROJECT_DIR$/.idea/modules/MitMSim-build.iml" />
+    </modules>
+  </component>
+</project>
