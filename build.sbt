@@ -1,7 +1,7 @@
 
 ThisBuild / version := "1.0.0"
 
-ThisBuild / scalaVersion := "2.12.13"
+ThisBuild / scalaVersion := "2.13.12"
 
 val scalaTestVersion = "3.2.11"
 val guavaVersion = "31.1-jre"
@@ -33,8 +33,8 @@ lazy val commonDependencies = Seq(
   "org.yaml" % "snakeyaml" % "2.0",
   "org.mockito" % "mockito-core" % "5.2.0" % Test,
   "org.apache.mrunit" % "mrunit" % "1.1.0" % Test classifier "hadoop2",
-  "org.apache.spark" %% "spark-core" % "3.1.1",
-  "org.apache.spark" %% "spark-graphx" % "3.1.1"
+  "org.apache.spark" %% "spark-core" % "3.5.0",
+  "org.apache.spark" %% "spark-graphx" % "3.5.0"
 )
 
 lazy val root = (project in file("."))
@@ -45,6 +45,9 @@ lazy val root = (project in file("."))
 Compile / run / mainClass := Some("app.Main")
 
 unmanagedBase := baseDirectory.value / "src" / "main" / "resources" / "lib"
+
+scalacOptions ++= Seq("-Ytasty-reader")
+
 
 libraryDependencies ++= commonDependencies
 
