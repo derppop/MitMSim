@@ -15,6 +15,8 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="sbt: scala-sdk-2.13.12" level="project" />
     <orderEntry type="library" name="sbt: aopalliance:aopalliance:1.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: ch.qos.logback:logback-classic:1.2.10:jar" level="project" />
+    <orderEntry type="library" name="sbt: ch.qos.logback:logback-core:1.2.10:jar" level="project" />
     <orderEntry type="library" name="sbt: ch.qos.reload4j:reload4j:1.2.22:jar" level="project" />
     <orderEntry type="library" name="sbt: com.clearspring.analytics:stream:2.9.6:jar" level="project" />
     <orderEntry type="library" name="sbt: com.esotericsoftware:kryo-shaded:4.0.2:jar" level="project" />

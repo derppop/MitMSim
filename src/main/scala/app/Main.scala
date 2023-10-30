@@ -5,6 +5,8 @@ import NetGraphAlgebraDefs._
 import Utilz.NGSConstants
 import org.apache.spark.{SparkConf, SparkContext}
 import util.GraphLoader.loadGraphX
+import core.GraphWalker.randomWalk
+import org.apache.spark.rdd.RDD
 
 
 object Main {
@@ -29,6 +31,10 @@ object Main {
     val (graphName, perturbedGraphName) = generateGraphs()
     val originalGraph = loadGraphX(sc, graphName)
     val perturbedGraph = loadGraphX(sc, perturbedGraphName)
-
+    perturbedGraph.get.edges.foreach(x => {println(s"${x.srcId} - ${x.dstId}")})
+    val valuableNodes: Set[Long] = originalGraph.get.vertices.collect{
+      case (id, node) if (node.valuableData) => id.toLong
+   }.collect().toSet
+    val path: RDD[NodeObject] = randomWalk(sc, perturbedGraph.get)
   }
 }
