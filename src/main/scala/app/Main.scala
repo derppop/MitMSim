@@ -7,6 +7,7 @@ import org.apache.spark.{SparkConf, SparkContext}
 import util.GraphLoader.loadGraphX
 import core.GraphWalker.randomWalk
 import org.apache.spark.rdd.RDD
+import core.WalkIdentifier.identifyNodes
 
 
 object Main {
@@ -36,5 +37,6 @@ object Main {
       case (id, node) if (node.valuableData) => id.toLong
    }.collect().toSet
     val path: RDD[NodeObject] = randomWalk(sc, perturbedGraph.get)
+    val simNodes = identifyNodes(originalGraph.get, path)
   }
 }
