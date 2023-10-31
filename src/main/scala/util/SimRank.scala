@@ -40,6 +40,7 @@ object SimRank {
     val depthSim = compareValues(firstNode.currentDepth, secondNode.currentDepth)
     val maxBranchFactorSim = compareValues(firstNode.maxBranchingFactor, secondNode.maxBranchingFactor)
     val valSim = getValSim(firstNode.storedValue, secondNode.storedValue)
+
     propertySimWeight*propSim + childrenSimWeight*childrenSim + depthSimWeight*depthSim + branchFactorSimWeight*maxBranchFactorSim + storedValSimWeight*valSim
   }
 
