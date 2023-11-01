@@ -5,13 +5,11 @@ import NetGraphAlgebraDefs._
 import Utilz.NGSConstants
 import org.apache.spark.{SparkConf, SparkContext}
 import util.GraphLoader.loadGraphX
-import core.GraphWalker.randomWalk
-import org.apache.spark.rdd.RDD
-import core.NodeIdentifier.identifyNodes
+import Driver.startJob
 
 
 object Main {
-  def generateGraphs(): (String, String) = {
+  private def generateGraphs(): (String, String) = {
     // Generate graph
     val graph: NetGraph = NetModelAlgebra().get
     val graphName = NGSConstants.OUTPUTFILENAME
@@ -36,7 +34,10 @@ object Main {
     val valuableNodes: Set[Long] = originalGraph.get.vertices.collect{
       case (id, node) if (node.valuableData) => id.toLong
    }.collect().toSet
-    val path: RDD[NodeObject] = randomWalk(sc, perturbedGraph.get)
-    val simNodes = identifyNodes(originalGraph.get, path)
+
+    val (path, decisionToAttack, result) = startJob(sc, originalGraph.get, perturbedGraph.get, valuableNodes)
+    // output path, the decision to attack, and results into a file
+    // based on result, start another job
+
   }
 }
