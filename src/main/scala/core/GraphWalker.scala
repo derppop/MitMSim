@@ -16,7 +16,7 @@ object GraphWalker {
     val initialNode = vertices(Random.nextInt(vertices.length))._2
 
     var currentNode = initialNode
-    var path = ArrayBuffer[NodeObject]()
+    val path = ArrayBuffer[NodeObject]()
     for (_ <- 1 to maxWalkLength) {
       path += currentNode
       // decide whether to end walk abruptly or not

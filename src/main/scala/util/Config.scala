@@ -24,4 +24,11 @@ object Config {
     val simThreshold: Double = comparisonConfig.getDouble("simThreshold")
   }
 
+  object Job {
+    private val jobConfig = config.getConfig("Job")
+    val resultDirectory: String = jobConfig.getString("resultDirectory")
+    val maxIterations: Int = jobConfig.getInt("maxIterations")
+    val graphDirectory: String = jobConfig.getString("graphDirectory")
+  }
+
 }

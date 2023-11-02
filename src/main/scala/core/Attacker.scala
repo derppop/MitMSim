@@ -1,7 +1,5 @@
 package core
 
-import NetGraphAlgebraDefs.NodeObject
-import org.apache.spark.SparkContext
 import org.apache.spark.rdd.RDD
 
 object Attacker {

@@ -3,3 +3,5 @@
 log/
 project/target/
 target/
+results/
+graphs/

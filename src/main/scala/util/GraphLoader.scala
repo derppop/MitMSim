@@ -1,6 +1,5 @@
 package util
 
-import NetGraphAlgebraDefs.NetGraph.logger
 import NetGraphAlgebraDefs.NetModelAlgebra.outputDirectory
 import NetGraphAlgebraDefs.{Action, NetGraphComponent, NodeObject}
 import org.apache.spark.SparkContext
@@ -10,6 +9,7 @@ import org.apache.spark.graphx.{Edge, EdgeRDD, Graph, VertexRDD}
 import java.io.{FileInputStream, ObjectInputStream}
 import scala.util.Try
 
+// deserializes .ngs graphs into GraphX instances, uses a modified version of NetGameSim's load method
 object GraphLoader {
   private val logger = LoggerFactory.getLogger(GraphLoader.getClass)
   def loadGraphX(sc: SparkContext, fileName: String, dir: String = outputDirectory): Option[Graph[NodeObject, Action]] = {
