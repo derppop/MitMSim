@@ -26,7 +26,7 @@ Use the following command to produce the project jar.
  ````
 Once the jar is built, the job can be run locally with the following command.
 ````
-spark-submit --class app.Main --master local[4] MitMSim-assembly-1.0.0.jar
+spark-submit --class app.Main --master local[4] --jars MitMSim-assembly-1.0.0.jar --driver-class-path MitMSim-assembly-1.0.0.jar MitMSim-assembly-1.0.0.jar
 ````
 
 Spark 3.5.0 and Scala 2.13.10 was used to develop and test this project
@@ -55,4 +55,4 @@ the following is a list of config variables specific to this project.
 * branchFactorSimWeight - Weight of branchFactor similarity in computing similarity score
 * storedValSimWeight - Weight of storedVal similarity in computing similarity score
 
-[Local demo]()
+[Local demo](https://youtu.be/rwVXnIllb3E)
