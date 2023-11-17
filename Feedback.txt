@@ -1,0 +1,10 @@
+Student: Joseph David
+
+No AWS deployment => -0.5%
+=> No scalatests = -1%
+
+Your solution is interesting, and your project structure is clean. I would've liked to see this run on AWS and to have some scalatests, since that would've easily net you full points.
+Good job overall. Keep it up!
+
+
+Final Grade: 13.5%
