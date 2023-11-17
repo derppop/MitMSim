@@ -3,7 +3,7 @@
 ### Joseph David - jdavid31@uic.edu
 
 ## Functionality
-GraphComparison utilizes [netgamesim](https://github.com/0x1DOCD00D/NetGameSim) for graph generation, perturbation, 
+MitMSim utilizes [netgamesim](https://github.com/0x1DOCD00D/NetGameSim) for graph generation, perturbation, 
 and serialization. The graphs are then deserialized into GraphX instances.
 After deserializing the graph a job is started, a job consists of producing a random
 walk on the perturbed graph, attempting to identify each node in the walk via [simrank](src/main/scala/util/SimRank.scala), 
